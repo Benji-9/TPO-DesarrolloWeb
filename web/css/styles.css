@@ -79,22 +79,137 @@ nav ul li a:hover {
   background-color: #a67c52;
 }
 
+/* ===== Personalización de Botones ===== */
+
+.btn-dark {
+  background-color: #4b3b2b; /* Un tono café oscuro de tu paleta */
+  border-color: #4b3b2b;
+  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 4px; /* Un borde ligeramente redondeado */
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px; /* Pequeño ajuste para darle más aire */
+}
+
+.btn-dark:hover {
+  background-color: #6f4e37; /* Un tono más claro al pasar el mouse */
+  border-color: #6f4e37;
+  transform: translateY(-2px); /* Un sutil efecto de elevación */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  /* Puedes definir estilos similares para el botón primario si lo usas */
+}
+
+/* Ajusta también el botón del formulario de contacto */
+#contacto-form .btn { 
+    /* Estilos específicos si quieres que sea diferente */
+}
+
+/* ===== Personalización del Navbar ===== */
+
+.navbar {
+  transition: background-color 0.4s ease;
+}
+
+.navbar .navbar-brand {
+  font-family: 'Georgia', serif; /* Una fuente con más personalidad */
+  font-size: 1.8rem;
+  color: #4b3b2b;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  text-transform: uppercase; /* Mayúsculas para un estilo más definido */
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* Efecto de subrayado en el hover */
+.navbar .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #6f4e37;
+  transition: width 0.4s ease;
+}
+
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after {
+  width: 100%;
+}
+
 /* ===== Botón modo oscuro ===== */
 
 #darkModeToggle {
-  background-color: #a67c52;
-  border: none;
-  color: #fdf6f0;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  border: 1px solid #6f4e37;
+  color: #6f4e37;
+  transition: all 0.3s ease;
 }
 
 #darkModeToggle:hover {
-  background-color: #d9cbb6;
-  color: #6f4e37;
+  background-color: #6f4e37;
+  color: #fdf6f0;
+}
+
+
+/* ===== Estilos del Modo Oscuro ===== */
+
+body.dark-mode {
+  background-color: #2e2e2e;
+  color: #d9cbb6;
+}
+
+body.dark-mode .bg-light {
+    background-color: #3a3a3a !important; /* El !important es para sobreescribir Bootstrap */
+}
+
+body.dark-mode .navbar-light .navbar-brand,
+body.dark-mode .navbar-light .navbar-nav .nav-link {
+  color: #d9cbb6;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h5,
+body.dark-mode .menu-price {
+    color: #f0e6d8;
+}
+
+body.dark-mode .hero {
+    background-color: #3a3a3a !important;
+}
+
+body.dark-mode p,
+body.dark-mode .menu-item p {
+    color: #b0a493;
+}
+
+body.dark-mode .card {
+  background-color: #3f3f3f;
+  border-color: #555;
+}
+
+body.dark-mode .form-control {
+    background-color: #3a3a3a;
+    color: #d9cbb6;
+    border-color: #555;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #888;
+}
+
+body.dark-mode footer.bg-dark {
+    background-color: #222 !important;
 }
 
 /* ===== Blog / Aprende de Café ===== */
@@ -104,20 +219,6 @@ nav ul li a:hover {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
   margin-bottom: 40px;
-}
-
-.card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(111, 78, 55, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 10px 20px rgba(111, 78, 55, 0.25);
 }
 
 .card-img-top {
@@ -131,15 +232,30 @@ nav ul li a:hover {
   flex-grow: 1;
 }
 
-.card-title {
-  font-size: 1.25rem;
-  margin-bottom: 10px;
-  color: #6f4e37;
-}
-
 .card-text {
   font-size: 1rem;
   color: #5a3e2b;
+}
+
+/* ===== Personalización de Cards ===== */
+
+.card {
+  border: 1px solid #e9e0d7; /* Un borde muy sutil en lugar de la sombra fuerte */
+  box-shadow: none; /* Quitamos la sombra por defecto */
+  border-radius: 6px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición con más personalidad */
+  background-color: #fff; /* Aseguramos fondo blanco */
+}
+
+.card:hover {
+  transform: scale(1.03); /* Un poco más grande al pasar el mouse */
+  border-color: #c2b192;
+  box-shadow: 0 15px 30px rgba(75, 59, 43, 0.1); /* Sombra más suave que aparece solo al interactuar */
+}
+
+.card-title {
+  color: #6f4e37;
+  font-weight: 700;
 }
 
 /* ===== Calendario ===== */

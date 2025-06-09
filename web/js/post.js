@@ -2,7 +2,7 @@ const blogPosts = [
   {
     id: 1,
     title: "Introducción al café de especialidad",
-    image: "img/posts/cafe-especialidad.jpeg",
+    image: "img/posts/cafe-especialidad.webp",
     date: "2025-06-15",
     content: `
       <p>El café de especialidad se distingue por su trazabilidad, calidad en origen y cuidado en el proceso. Se cultiva en altitudes específicas y se tuesta para resaltar sus notas únicas.</p>
@@ -12,7 +12,7 @@ const blogPosts = [
   {
     id: 2,
     title: "Métodos para preparar café en casa",
-    image: "img/posts/metodos-preparacion.jpg",
+    image: "img/posts/metodos-preparacion.webp",
     date: "2025-06-20",
     content: `
       <p>Desde la prensa francesa hasta el V60, cada método aporta sabores únicos. Aquí te mostramos cómo usarlos, qué molienda elegir y tiempos recomendados.</p>
@@ -26,7 +26,7 @@ const blogPosts = [
   {
     id: 3,
     title: "Los mejores blends de La Bodega del Café",
-    image: "img/posts/blends-bodega.png",
+    image: "img/posts/blends-bodega.webp",
     date: "2025-06-25",
     content: `
       <p>Explorá nuestras mezclas estrella: desde el blend Palermo intenso hasta el Suave Amanecer, cada uno está diseñado para paladares distintos.</p>

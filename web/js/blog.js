@@ -2,21 +2,21 @@ const blogPosts = [
   {
     id: 1,
     title: "Introducción al café de especialidad",
-    image: "img/posts/cafe-especialidad.jpeg",
+    image: "img/posts/cafe-especialidad.webp",
     summary: "Descubre qué hace que un café sea especial y cómo elegir el mejor grano.",
     date: "2025-06-15"
   },
   {
     id: 2,
     title: "Métodos para preparar café en casa",
-    image: "img/posts/metodos-preparacion.jpg",
+    image: "img/posts/metodos-preparacion.webp",
     summary: "Aprende diferentes técnicas para preparar café y sacar lo mejor de cada grano.",
     date: "2025-06-20"
   },
   {
     id: 3,
     title: "Los mejores blends de La Bodega del Café",
-    image: "img/posts/blends-bodega.png",
+    image: "img/posts/blends-bodega.webp",
     summary: "Te contamos sobre nuestras mezclas exclusivas y cómo disfrutarlas.",
     date: "2025-06-25"
   }

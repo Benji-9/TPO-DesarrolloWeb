@@ -1,52 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('form.needs-validation');
-  const nombre = form.querySelector('input[type="text"]');
-  const email = form.querySelector('input[type="email"]');
-  const mensaje = form.querySelector('textarea');
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
 
-  form.addEventListener('submit', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
 
-    let valid = true;
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      } else {
+        // Simulación de envío exitoso
+        alert('¡Gracias por tu mensaje! Te responderemos pronto.');
+        form.reset(); // Limpia el formulario
+        form.classList.remove('was-validated'); // Remueve las clases de validación
+        event.preventDefault(); // Previene el envío real para la simulación
+      }
 
-    // Validar nombre
-    if (nombre.value.trim() === '') {
-      nombre.classList.add('is-invalid');
-      valid = false;
-    } else {
-      nombre.classList.remove('is-invalid');
-      nombre.classList.add('is-valid');
-    }
-
-    // Validar email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value.trim())) {
-      email.classList.add('is-invalid');
-      valid = false;
-    } else {
-      email.classList.remove('is-invalid');
-      email.classList.add('is-valid');
-    }
-
-    // Validar mensaje
-    if (mensaje.value.trim() === '') {
-      mensaje.classList.add('is-invalid');
-      valid = false;
-    } else {
-      mensaje.classList.remove('is-invalid');
-      mensaje.classList.add('is-valid');
-    }
-
-    if (valid) {
-      // Simulación de envío exitoso
-      alert('¡Gracias por tu mensaje! Te responderemos pronto.');
-      form.reset();
-
-      // Limpiar clases de validación
-      [nombre, email, mensaje].forEach(input => {
-        input.classList.remove('is-valid', 'is-invalid');
-      });
-    }
-  });
-});
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
